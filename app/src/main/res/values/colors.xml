@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Button colors -->
+    <color name="like_button_color">#4CAF50</color>
+    <color name="like_button_selected">#2E7D32</color>
+    <color name="dislike_button_color">#F44336</color>
+    <color name="dislike_button_selected">#C62828</color>
+    <color name="button_neutral">#9E9E9E</color>
+</resources>
