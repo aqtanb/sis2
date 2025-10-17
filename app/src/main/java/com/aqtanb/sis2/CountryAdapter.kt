@@ -13,7 +13,8 @@ import com.bumptech.glide.Glide
 // Bridge for RecyclerView and data
 class CountryAdapter(
     private var countries: List<Country>,
-    private val onVoteClicked: (Int, VoteState) -> Unit
+    private val onVoteClicked: (Int, VoteState) -> Unit,
+    private val onItemClicked: (Country) -> Unit
 ) : RecyclerView.Adapter<CountryAdapter.CountryViewHolder>() {
 
     class CountryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -42,6 +43,10 @@ class CountryAdapter(
             .into(holder.imageFlag)
 
         updateButtonStates(holder, country.voteState)
+
+        holder.itemView.setOnClickListener {
+            onItemClicked(country)
+        }
 
         holder.buttonLike.setOnClickListener {
             val newVoteState = if (country.voteState == VoteState.LIKE) {
